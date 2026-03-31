@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="uz">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tib Markazi - Bemorni Qabul Qilish Tizimi</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- Toast Notification Container -->
+		<div class="toast-container" id="toastContainer"></div>
+
+		<!-- Email Modal -->
+		<div class="modal" id="emailModal">
+			<div class="modal-content">
+				<h3>📧 Chekni Emailga Yuborish</h3>
+				<input type="email" id="emailInput" placeholder="Bemor emaili..." />
+				<div class="modal-buttons">
+					<button class="btn-confirm" onclick="sendEmail()">Yuborish</button>
+					<button class="btn-cancel" onclick="closeEmailModal()">Bekor Qilish</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="header">
+				<h1>🏥 Tib Markazi - Bemorni Qabul Qilish Tizimi</h1>
+				<p>Bemorning ma'lumotlarini kiriting va ro'yxatga oling</p>
+			</div>
+
+			<div class="main-grid">
+				<!-- Form Section -->
+				<div class="form-section">
+					<h2>Bemorning Ma'lumotlari</h2>
+					<form id="patientForm">
+						<div class="form-group required">
+							<label for="firstName">Ismi (Familiyasi)</label>
+							<input type="text" id="firstName" placeholder="Masalan: Ali Abdullayev" />
+							<div class="error-message" id="firstNameError"></div>
+						</div>
+
+						<div class="form-group required">
+							<label for="dob">Tug'ilgan Sanasi</label>
+							<input type="date" id="dob" />
+							<div class="error-message" id="dobError"></div>
+						</div>
+
+						<div class="form-group required">
+							<label for="phone">Telefon Raqami</label>
+							<input type="tel" id="phone" placeholder="+998 (XX) XXX-XX-XX" />
+							<div class="error-message" id="phoneError"></div>
+						</div>
+
+						<div class="form-group required">
+							<label for="visitReason">Ki'rish Sababi</label>
+							<select id="visitReason">
+								<option value="">-- Tanlang --</option>
+								<option value="consultation">Konsultatsiya</option>
+								<option value="checkup">Tibbiy Tekshirish</option>
+								<option value="treatment">Davolash</option>
+								<option value="surgery">Jarrohlik Operatsiyasi</option>
+								<option value="emergency">Shoshqoqlik Yordami</option>
+							</select>
+							<div class="error-message" id="visitReasonError"></div>
+						</div>
+
+						<div class="form-group required">
+							<label for="specialty">Tibbiy Mutaxassislik</label>
+							<select id="specialty">
+								<option value="">-- Tanlang --</option>
+								<option value="cardiology">Kardiologiya (Yurak)</option>
+								<option value="orthopedics">Ortopediya (Suyaklar)</option>
+								<option value="neurology">Nevrologiya (Nerv)</option>
+								<option value="dermatology">Dermatologiya (Teri)</option>
+								<option value="pediatrics">Bolalar Kasalliklari</option>
+								<option value="ophthalmology">Oftalmologiya (Ko'z)</option>
+								<option value="dentistry">Stomatologiya (Tish)</option>
+							</select>
+							<div class="error-message" id="specialtyError"></div>
+						</div>
+
+						<div class="form-group required">
+							<label for="doctor">Doktor Tanlash</label>
+							<select id="doctor">
+								<option value="">-- Birinchi mutaxassislikni tanlang --</option>
+							</select>
+							<div class="error-message" id="doctorError"></div>
+						</div>
+
+						<div class="form-group">
+							<label for="symptoms">Shikoyatlar / Belgilar (Ixtiyoriy)</label>
+							<textarea id="symptoms" placeholder="Bemorning bosh shikoyatlarini yozing..."></textarea>
+							<div class="error-message" id="symptomsError"></div>
+						</div>
+
+						<button type="button" class="btn" id="submitBtn" onclick="registerPatient()">
+							✓ Ro'yxatga Olish va Chek Chiqarish
+						</button>
+					</form>
+				</div>
+
+				<!-- Patient Display Section -->
+				<div class="patient-display">
+					<h2>Bemorning Detalyar</h2>
+					<div id="patientInfo">
+						<div class="empty-state">
+							<p>👈 Chap tarafdagi forma orqali bemorning ma'lumotlarini kiriting</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Receipt Section -->
+			<div class="receipt-section" id="receiptSection">
+				<h2 style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px">📋 Chek va Ro'yxat Maʼlumoti</h2>
+				<div class="receipt" id="receiptContent">
+					<!-- Receipt will be generated here -->
+				</div>
+				<div class="receipt-buttons">
+					<button class="receipt-btn receipt-btn-print" onclick="printReceipt()">🖨 Chap Qilish</button>
+					<button class="receipt-btn receipt-btn-download" onclick="downloadReceipt()">⬇ Saqlash</button>
+					<button class="receipt-btn receipt-btn-email" onclick="openEmailModal()">📧 Emailga Yuborish</button>
+					<button class="receipt-btn receipt-btn-new" onclick="newPatient()">➕ Yangi Bemor</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
