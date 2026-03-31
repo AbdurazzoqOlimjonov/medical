@@ -24,7 +24,7 @@
 
 		<div class="container">
 			<div class="header">
-				<h1>🏥 Tib Markazi - Bemorni Qabul Qilish Tizimi</h1>
+				<h1>Tib Markazi - Bemorni Qabul Qilish Tizimi</h1>
 				<p>Bemorning ma'lumotlarini kiriting va ro'yxatga oling</p>
 			</div>
 
@@ -101,10 +101,22 @@
 
 				<!-- Patient Display Section -->
 				<div class="patient-display">
-					<h2>Bemorning Detalyar</h2>
+					<img
+						src="https://static.vecteezy.com/system/resources/previews/028/569/170/non_2x/single-man-icon-people-icon-user-profile-symbol-person-symbol-businessman-stock-vector.jpg"
+						alt=""
+						width="40"
+						height="40" />
+					<h2>Bemor Haqida ma'lumotlar</h2>
 					<div id="patientInfo">
 						<div class="empty-state">
-							<p>👈 Chap tarafdagi forma orqali bemorning ma'lumotlarini kiriting</p>
+							<p>
+								<img
+									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcop2OkNPgoCsasl-4ZvCEzm3956jfASj9WQ&s"
+									alt=""
+									width="40"
+									height="20" />
+								<span> Chap tarafdagi forma orqali bemorning ma'lumotlarini kiriting </span>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -112,17 +124,19 @@
 
 			<!-- Receipt Section -->
 			<div class="receipt-section" id="receiptSection">
-				<h2 style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px">📋 Chek va Ro'yxat Maʼlumoti</h2>
+				<h2 style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px">Chek va Ro'yxat Maʼlumoti</h2>
 				<div class="receipt" id="receiptContent">
 					<!-- Receipt will be generated here -->
 				</div>
 				<div class="receipt-buttons">
-					<button class="receipt-btn receipt-btn-print" onclick="printReceipt()">🖨 Chap Qilish</button>
-					<button class="receipt-btn receipt-btn-download" onclick="downloadReceipt()">⬇ Saqlash</button>
-					<button class="receipt-btn receipt-btn-email" onclick="openEmailModal()">📧 Emailga Yuborish</button>
-					<button class="receipt-btn receipt-btn-new" onclick="newPatient()">➕ Yangi Bemor</button>
+					<button class="receipt-btn receipt-btn-print" onclick="printReceipt()">Chop Qilish</button>
+					<button class="receipt-btn receipt-btn-download" onclick="downloadReceipt()">Saqlash</button>
+					<button class="receipt-btn receipt-btn-email" onclick="openEmailModal()">Emailga Yuborish</button>
+					<button class="receipt-btn receipt-btn-new" onclick="newPatient()">Yangi Bemor</button>
 				</div>
 			</div>
 		</div>
+
+		<script src="run.js"></script>
 	</body>
 </html>
