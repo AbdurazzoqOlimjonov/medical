@@ -3,39 +3,38 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Tib Markazi - Bemorni Qabul Qilish Tizimi</title>
+		<title>MediClinic Pro - Bemorni Qabul Qilish Tizimi</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<!-- Toast Notification Container -->
 		<div class="toast-container" id="toastContainer"></div>
 
-		<!-- Email Modal -->
 		<div class="modal" id="emailModal">
 			<div class="modal-content">
-				<h3>📧 Chekni Emailga Yuborish</h3>
+				<h3>📧 Emailga Yuborish</h3>
 				<input type="email" id="emailInput" placeholder="Bemor emaili..." />
 				<div class="modal-buttons">
 					<button class="btn-confirm" onclick="sendEmail()">Yuborish</button>
-					<button class="btn-cancel" onclick="closeEmailModal()">Bekor Qilish</button>
+					<button class="btn-cancel" onclick="closeEmailModal()">Bekor</button>
 				</div>
 			</div>
 		</div>
 
 		<div class="container">
 			<div class="header">
-				<h1>Tib Markazi - Bemorni Qabul Qilish Tizimi</h1>
-				<p>Bemorning ma'lumotlarini kiriting va ro'yxatga oling</p>
+				<div class="header-content">
+					<h1>🏥 MediClinic Pro</h1>
+					<p>Zamonaviy tibbiy qabul va bemorni ro'yxatga olish tizimi</p>
+				</div>
 			</div>
 
 			<div class="main-grid">
-				<!-- Form Section -->
 				<div class="form-section">
-					<h2>Bemorning Ma'lumotlari</h2>
+					<h2>Bemorni Ro'yxatga Olish</h2>
 					<form id="patientForm">
 						<div class="form-group required">
-							<label for="firstName">Ismi (Familiyasi)</label>
-							<input type="text" id="firstName" placeholder="Masalan: Ali Abdullayev" />
+							<label for="firstName">To'liq Ismi</label>
+							<input type="text" id="firstName" placeholder="Ali Abdullayev" />
 							<div class="error-message" id="firstNameError"></div>
 						</div>
 
@@ -55,26 +54,26 @@
 							<label for="visitReason">Ki'rish Sababi</label>
 							<select id="visitReason">
 								<option value="">-- Tanlang --</option>
-								<option value="consultation">Konsultatsiya</option>
-								<option value="checkup">Tibbiy Tekshirish</option>
-								<option value="treatment">Davolash</option>
-								<option value="surgery">Jarrohlik Operatsiyasi</option>
-								<option value="emergency">Shoshqoqlik Yordami</option>
+								<option value="consultation">🔍 Konsultatsiya</option>
+								<option value="checkup">🩺 Tibbiy Tekshirish</option>
+								<option value="treatment">💊 Davolash</option>
+								<option value="surgery">🏥 Jarrohlik</option>
+								<option value="emergency">🚨 Shoshqoqlik</option>
 							</select>
 							<div class="error-message" id="visitReasonError"></div>
 						</div>
 
 						<div class="form-group required">
-							<label for="specialty">Tibbiy Mutaxassislik</label>
+							<label for="specialty">Mutaxassislik</label>
 							<select id="specialty">
 								<option value="">-- Tanlang --</option>
-								<option value="cardiology">Kardiologiya (Yurak)</option>
-								<option value="orthopedics">Ortopediya (Suyaklar)</option>
-								<option value="neurology">Nevrologiya (Nerv)</option>
-								<option value="dermatology">Dermatologiya (Teri)</option>
-								<option value="pediatrics">Bolalar Kasalliklari</option>
-								<option value="ophthalmology">Oftalmologiya (Ko'z)</option>
-								<option value="dentistry">Stomatologiya (Tish)</option>
+								<option value="cardiology">❤️ Kardiologiya</option>
+								<option value="orthopedics">🦴 Ortopediya</option>
+								<option value="neurology">🧠 Nevrologiya</option>
+								<option value="dermatology">🔬 Dermatologiya</option>
+								<option value="pediatrics">👶 Bolalar Kasalliklari</option>
+								<option value="ophthalmology">👁️ Oftalmologiya</option>
+								<option value="dentistry">🦷 Stomatologiya</option>
 							</select>
 							<div class="error-message" id="specialtyError"></div>
 						</div>
@@ -82,57 +81,36 @@
 						<div class="form-group required">
 							<label for="doctor">Doktor Tanlash</label>
 							<select id="doctor">
-								<option value="">-- Birinchi mutaxassislikni tanlang --</option>
+								<option value="">-- Mutaxassislikni birinchi tanlang --</option>
 							</select>
 							<div class="error-message" id="doctorError"></div>
 						</div>
 
 						<div class="form-group">
-							<label for="symptoms">Shikoyatlar / Belgilar (Ixtiyoriy)</label>
-							<textarea id="symptoms" placeholder="Bemorning bosh shikoyatlarini yozing..."></textarea>
-							<div class="error-message" id="symptomsError"></div>
+							<label for="symptoms">Asosiy Shikoyatlar (Ixtiyoriy)</label>
+							<textarea id="symptoms" placeholder="Bemorning shikoyatlarini yozing..."></textarea>
 						</div>
 
-						<button type="button" class="btn" id="submitBtn" onclick="registerPatient()">
-							✓ Ro'yxatga Olish va Chek Chiqarish
-						</button>
+						<button type="button" class="btn" id="submitBtn" onclick="registerPatient()">✓ Ro'yxatga Olish va Chek Olish</button>
 					</form>
 				</div>
 
-				<!-- Patient Display Section -->
 				<div class="patient-display">
-					<img
-						src="https://static.vecteezy.com/system/resources/previews/028/569/170/non_2x/single-man-icon-people-icon-user-profile-symbol-person-symbol-businessman-stock-vector.jpg"
-						alt=""
-						width="40"
-						height="40" />
-					<h2>Bemor Haqida ma'lumotlar</h2>
+					<h2>Bemor Ma'lumoti</h2>
 					<div id="patientInfo">
-						<div class="empty-state">
-							<p>
-								<img
-									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcop2OkNPgoCsasl-4ZvCEzm3956jfASj9WQ&s"
-									alt=""
-									width="40"
-									height="20" />
-								<span> Chap tarafdagi forma orqali bemorning ma'lumotlarini kiriting </span>
-							</p>
-						</div>
+						<div class="empty-state">👈 Forma orqali ma'lumot kiriting</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- Receipt Section -->
 			<div class="receipt-section" id="receiptSection">
-				<h2 style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px">Chek va Ro'yxat Maʼlumoti</h2>
-				<div class="receipt" id="receiptContent">
-					<!-- Receipt will be generated here -->
-				</div>
+				<h2>📋 Tibbiy Chek</h2>
+				<div class="receipt" id="receiptContent"></div>
 				<div class="receipt-buttons">
-					<button class="receipt-btn receipt-btn-print" onclick="printReceipt()">Chop Qilish</button>
-					<button class="receipt-btn receipt-btn-download" onclick="downloadReceipt()">Saqlash</button>
-					<button class="receipt-btn receipt-btn-email" onclick="openEmailModal()">Emailga Yuborish</button>
-					<button class="receipt-btn receipt-btn-new" onclick="newPatient()">Yangi Bemor</button>
+					<button class="receipt-btn receipt-btn-print" onclick="printReceipt()">🖨️ Chap Qilish</button>
+					<button class="receipt-btn receipt-btn-download" onclick="downloadReceipt()">⬇️ Saqlash</button>
+					<button class="receipt-btn receipt-btn-email" onclick="openEmailModal()">📧 Email</button>
+					<button class="receipt-btn receipt-btn-new" onclick="newPatient()">➕ Yangi</button>
 				</div>
 			</div>
 		</div>
